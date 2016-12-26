@@ -1,8 +1,162 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="gui.MainController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+   <children>
+      <GridPane layoutX="172.0" layoutY="174.0" prefHeight="492.0" prefWidth="535.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addTransmute" text="+" />
+                  <Label text="Transmutation">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeTransmute" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addAugment" text="+" />
+                  <Label text="Augmentation">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeAugment" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="117.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addAlt" text="+" />
+                  <Label text="Alteration">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeAlt" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="224.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addAlch" text="+" />
+                  <Label text="Alchemy">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeAlch" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="331.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addRegal" text="+" />
+                  <Label text="Regal">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeRegal" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="438.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addChaos" text="+" />
+                  <Label text="Chaos">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeChaos" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="256.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addExalt" text="+" />
+                  <Label text="Exalt">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeExalt" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="117.0" layoutY="256.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addDivine" text="+" />
+                  <Label text="Divine">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeDivine" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addMirror" text="+" />
+                  <Label text="Mirror">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeMirror" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addSilver" text="+" />
+                  <Label text="Silver">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeSilver" text="-" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER" layoutX="41.0" layoutY="103.0" prefHeight="492.0" prefWidth="146.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ChoiceBox fx:id="zonesBox" prefHeight="25.0" prefWidth="118.0">
+               <VBox.margin>
+                  <Insets bottom="200.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label text="Run 1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="newRunButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="New Run" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
