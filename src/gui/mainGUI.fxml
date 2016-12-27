@@ -29,7 +29,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="transmuteLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeTransmute" text="-" />
                </children>
             </VBox>
@@ -41,7 +41,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="augmentLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeAugment" text="-" />
                </children>
             </VBox>
@@ -53,7 +53,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="altLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeAlt" text="-" />
                </children>
             </VBox>
@@ -65,7 +65,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="alchLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeAlch" text="-" />
                </children>
             </VBox>
@@ -77,7 +77,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="regalLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeRegal" text="-" />
                </children>
             </VBox>
@@ -89,7 +89,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="chaosLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeChaos" text="-" />
                </children>
             </VBox>
@@ -101,7 +101,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="exaltLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeExalt" text="-" />
                </children>
             </VBox>
@@ -113,7 +113,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="divineLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeDivine" text="-" />
                </children>
             </VBox>
@@ -125,7 +125,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="mirrorLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeMirror" text="-" />
                </children>
             </VBox>
@@ -137,7 +137,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="0" />
+                  <Label fx:id="silverLabel" text="0" />
                   <Button mnemonicParsing="false" onAction="#removeSilver" text="-" />
                </children>
             </VBox>

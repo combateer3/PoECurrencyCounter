@@ -26,7 +26,16 @@ public class Zone implements Serializable {
 
     public void addCurrency(Main.Currency currencyType, int amount) {
         int currentAmount = currencies.get(currencyType);
-        currencies.put(currencyType, currentAmount + amount);
+        int total = currentAmount + amount;
+
+        if (total < 0) {
+            total = 0;
+        }
+        currencies.put(currencyType, total);
+    }
+
+    public int getCurrency(Main.Currency currencyType) {
+        return currencies.get(currencyType);
     }
 
     public int getRun() {
