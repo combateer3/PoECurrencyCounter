@@ -95,8 +95,6 @@ public class MainController {
                 }
             }
         });
-
-        //TODO stats window
     }
 
     public static void save() {
