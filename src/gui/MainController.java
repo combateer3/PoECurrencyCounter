@@ -15,6 +15,7 @@ import java.util.List;
 public class MainController {
 
     private List<Zone> zones;
+    private List<String> zoneNames;
 
     @FXML
     private ChoiceBox zonesBox;
@@ -27,12 +28,12 @@ public class MainController {
     @FXML
     private void initialize() {
         zones = new ArrayList<>();
-        zones.add(new Zone("Dried Lake"));
+        zoneNames = new ArrayList<>();
 
-        zonesBox.setItems(FXCollections.observableArrayList(zones));
-        //default selections
-        zonesBox.setValue(zones.get(0));
-        currentZone = zones.get(0);
+        zones.add(new Zone("Dried Lake"));
+        zoneNames.add("Dried Lake");
+
+        refreshZonesBox();
 
         zonesBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -42,12 +43,24 @@ public class MainController {
         });
     }
 
+    private void refreshZonesBox() {
+        zonesBox.setItems(FXCollections.observableArrayList(zoneNames));
+        //default selections
+        zonesBox.setValue(zoneNames.get(0));
+        currentZone = zones.get(0);
+    }
+
     @FXML
     private void createNewZone() {
         String name = zoneField.getText();
         if (name != null) {
             zones.add(new Zone(name));
+            zoneNames.add(name);
+
+            zoneField.clear();
         }
+
+        refreshZonesBox();
     }
 
     @FXML
