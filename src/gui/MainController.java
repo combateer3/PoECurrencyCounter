@@ -5,9 +5,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import zone.Zone;
 
 import java.io.*;
@@ -60,7 +64,7 @@ public class MainController {
     @FXML
     private Label silverLabel;
 
-    private Zone currentZone;
+    private static Zone currentZone;
 
     @FXML
     private void initialize() {
@@ -129,6 +133,22 @@ public class MainController {
         silverLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.SILVER)));
 
         runLabel.setText("Run " + currentZone.getRun());
+    }
+
+    @FXML
+    private void openStatsWindow() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("statsGUI.fxml"));
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setTitle("Stats");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -276,6 +296,10 @@ public class MainController {
     private void removeSilver() {
         currentZone.addCurrency(Main.Currency.SILVER, -1);
         updateLabels();
+    }
+
+    public static Zone getCurrentZone() {
+        return currentZone;
     }
 
 }

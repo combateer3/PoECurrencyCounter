@@ -154,15 +154,16 @@
             <TextField fx:id="zoneField" prefHeight="25.0" prefWidth="124.0" promptText="Zone Name" />
             <Button mnemonicParsing="false" onAction="#createNewZone" text="New Zone">
                <VBox.margin>
-                  <Insets bottom="200.0" />
+                  <Insets bottom="160.0" />
                </VBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#openStatsWindow" text="Statistics" />
             <Label fx:id="runLabel" text="Run 1">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="newRunButton" mnemonicParsing="false" onAction="#createNewRun" prefHeight="25.0" prefWidth="114.0" text="New Run" />
+            <Button fx:id="newRunButton" mnemonicParsing="false" onAction="#createNewRun" prefHeight="25.0" prefWidth="114.0" text="Save Run" />
          </children>
       </VBox>
    </children>

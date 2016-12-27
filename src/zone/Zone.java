@@ -60,4 +60,8 @@ public class Zone implements Serializable {
     public String getName() {
         return name;
     }
+
+    public List<HashMap<Main.Currency, Integer>> getRuns() {
+        return runs;
+    }
 }
