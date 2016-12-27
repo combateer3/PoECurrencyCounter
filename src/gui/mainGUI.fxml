@@ -156,12 +156,12 @@
                   <Insets bottom="200.0" />
                </VBox.margin>
             </Button>
-            <Label text="Run 1">
+            <Label fx:id="runLabel" text="Run 1">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="newRunButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="New Run" />
+            <Button fx:id="newRunButton" mnemonicParsing="false" onAction="#createNewRun" prefHeight="25.0" prefWidth="114.0" text="New Run" />
          </children>
       </VBox>
    </children>

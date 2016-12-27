@@ -38,6 +38,10 @@ public class Zone implements Serializable {
         return currencies.get(currencyType);
     }
 
+    public void createNewRun() {
+        run += 1;
+    }
+
     public int getRun() {
         return run;
     }

@@ -25,6 +25,9 @@ public class MainController {
     private TextField zoneField;
 
     @FXML
+    private Label runLabel;
+
+    @FXML
     private Label transmuteLabel;
 
     @FXML
@@ -62,14 +65,13 @@ public class MainController {
         zoneNames = new ArrayList<>();
 
         zones.add(new Zone("Dried Lake"));
-        zoneNames.add("Dried Lake");
 
         refreshZonesBox();
 
         zonesBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                if ((int) newValue > 0) {
+                if ((int) newValue >= 0) {
                     currentZone = zones.get((int) newValue);
                     updateLabels();
                 }
@@ -78,6 +80,11 @@ public class MainController {
     }
 
     private void refreshZonesBox() {
+        zoneNames.clear();
+        for (Zone zone : zones) {
+            zoneNames.add(zone.getName());
+        }
+
         zonesBox.setItems(FXCollections.observableArrayList(zoneNames));
         //default selections
         zonesBox.setValue(zoneNames.get(0));
@@ -95,6 +102,8 @@ public class MainController {
         divineLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.DIVINE)));
         mirrorLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.MIRROR)));
         silverLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.SILVER)));
+
+        runLabel.setText("Run " + currentZone.getRun());
     }
 
     @FXML
@@ -108,6 +117,13 @@ public class MainController {
         }
 
         refreshZonesBox();
+    }
+
+    @FXML
+    private void createNewRun() {
+        currentZone.createNewRun();
+        runLabel.setText("Run " + currentZone.getRun());
+        //TODO reset labels and create new "run" (object?)
     }
 
     @FXML
