@@ -137,6 +137,12 @@ public class MainController {
 
     @FXML
     private void clearData() {
+        currentZone.totalReset();
+        updateLabels();
+    }
+
+    @FXML
+    private void clearAllData() {
         for (Zone zone : zones) {
             zone.totalReset();
         }
