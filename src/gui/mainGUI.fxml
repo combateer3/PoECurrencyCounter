@@ -145,6 +145,7 @@
       </GridPane>
       <VBox alignment="CENTER" layoutX="41.0" layoutY="103.0" prefHeight="492.0" prefWidth="146.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <Button mnemonicParsing="false" onAction="#deleteZone" text="Delete Zone" />
             <ChoiceBox fx:id="zonesBox" prefHeight="25.0" prefWidth="130.0">
                <VBox.margin>
                   <Insets />

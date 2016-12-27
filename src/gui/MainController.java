@@ -145,6 +145,13 @@ public class MainController {
     }
 
     @FXML
+    private void deleteZone() {
+        zones.remove(currentZone);
+        refreshZonesBox();
+        updateLabels();
+    }
+
+    @FXML
     private void createNewRun() {
         currentZone.createNewRun();
         runLabel.setText("Run " + currentZone.getRun());
