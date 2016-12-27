@@ -1,30 +1,36 @@
 package zone;
 
+import driver.Main;
+
 import java.io.Serializable;
 import java.util.HashMap;
 
 public class Zone implements Serializable {
 
-    private static final String[] CURRENCY_NAMES = {"transmute", "augment", "alt", "alch", "regal", "chaos", "exalt",
-            "divine", "mirror", "silver"};
-
     private String name;
+    private int run;
 
-    private HashMap<String, Integer> currencies;
+    private HashMap<Main.Currency, Integer> currencies;
 
     public Zone(String name) {
         this.name = name;
+        //default first run
+        this.run = 1;
         currencies = new HashMap<>();
 
-        //initial values for zone are zero
-        for (String currency : CURRENCY_NAMES) {
+        //default values of zero for new zone
+        for (Main.Currency currency : Main.Currency.values()) {
             currencies.put(currency, 0);
         }
     }
 
-    public void addCurrency(String currencyType, int amount) {
+    public void addCurrency(Main.Currency currencyType, int amount) {
         int currentAmount = currencies.get(currencyType);
         currencies.put(currencyType, currentAmount + amount);
+    }
+
+    public int getRun() {
+        return run;
     }
 
     public String getName() {

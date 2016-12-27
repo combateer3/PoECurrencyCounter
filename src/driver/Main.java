@@ -8,6 +8,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public enum Currency {
+        TRANSMUTE, AUGMENT, ALT, ALCH, REGAL,
+        CHAOS, EXALT, DIVINE, MIRROR, SILVER
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../gui/mainGUI.fxml"));

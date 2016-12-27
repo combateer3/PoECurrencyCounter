@@ -1,5 +1,8 @@
 package gui;
 
+import driver.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -19,11 +22,24 @@ public class MainController {
     @FXML
     private TextField zoneField;
 
+    private Zone currentZone;
+
     @FXML
     private void initialize() {
         zones = new ArrayList<>();
+        zones.add(new Zone("Dried Lake"));
 
         zonesBox.setItems(FXCollections.observableArrayList(zones));
+        //default selections
+        zonesBox.setValue(zones.get(0));
+        currentZone = zones.get(0);
+
+        zonesBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                currentZone = zones.get((int) newValue);
+            }
+        });
     }
 
     @FXML
@@ -36,12 +52,12 @@ public class MainController {
 
     @FXML
     private void addTransmute() {
-
+        currentZone.addCurrency(Main.Currency.TRANSMUTE, 1);
     }
 
     @FXML
     private void removeTransmute() {
-
+        currentZone.addCurrency(Main.Currency.TRANSMUTE, -1);
     }
 
     @FXML

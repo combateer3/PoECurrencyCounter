@@ -150,7 +150,7 @@
                   <Insets />
                </VBox.margin>
             </ChoiceBox>
-            <TextField fx:id="zoneField" promptText="Zone Name" />
+            <TextField fx:id="zoneField" prefHeight="25.0" prefWidth="124.0" promptText="Zone Name" />
             <Button mnemonicParsing="false" onAction="#createNewZone" text="New Zone">
                <VBox.margin>
                   <Insets bottom="200.0" />
