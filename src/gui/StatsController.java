@@ -140,7 +140,7 @@ public class StatsController {
 
     private void appendLabelText(Label label, double text) {
         String currentText = label.getText();
-        label.setText(currentText + new DecimalFormat("#.00").format(text));
+        label.setText(currentText + new DecimalFormat("0.00").format(text));
     }
 
     private void appendLabelText(Label label, int text) {
