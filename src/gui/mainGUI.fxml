@@ -145,11 +145,17 @@
       </GridPane>
       <VBox alignment="CENTER" layoutX="41.0" layoutY="103.0" prefHeight="492.0" prefWidth="146.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ChoiceBox fx:id="zonesBox" prefHeight="25.0" prefWidth="118.0">
+            <ChoiceBox fx:id="zonesBox" prefHeight="25.0" prefWidth="130.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ChoiceBox>
+            <TextField fx:id="zoneField" promptText="Zone Name" />
+            <Button mnemonicParsing="false" onAction="#createNewZone" text="New Zone">
                <VBox.margin>
                   <Insets bottom="200.0" />
                </VBox.margin>
-            </ChoiceBox>
+            </Button>
             <Label text="Run 1">
                <font>
                   <Font name="System Bold" size="18.0" />

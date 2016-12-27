@@ -1,16 +1,37 @@
 package gui;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import zone.Zone;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainController {
+
+    private List<Zone> zones;
 
     @FXML
     private ChoiceBox zonesBox;
 
     @FXML
-    private void initialize() {
+    private TextField zoneField;
 
+    @FXML
+    private void initialize() {
+        zones = new ArrayList<>();
+
+        zonesBox.setItems(FXCollections.observableArrayList(zones));
+    }
+
+    @FXML
+    private void createNewZone() {
+        String name = zoneField.getText();
+        if (name != null) {
+            zones.add(new Zone(name));
+        }
     }
 
     @FXML
