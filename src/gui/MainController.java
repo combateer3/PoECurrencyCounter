@@ -136,6 +136,14 @@ public class MainController {
     }
 
     @FXML
+    private void clearData() {
+        for (Zone zone : zones) {
+            zone.totalReset();
+        }
+        updateLabels();
+    }
+
+    @FXML
     private void openStatsWindow() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("statsGUI.fxml"));

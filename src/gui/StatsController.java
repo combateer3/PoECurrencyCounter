@@ -74,7 +74,7 @@ public class StatsController {
     @FXML
     private Label silverTotal;
 
-    private Zone currentZone;
+    private static Zone currentZone;
 
     private List<HashMap<Main.Currency, Integer>> runs;
 

@@ -47,6 +47,12 @@ public class Zone implements Serializable {
         resetCurrencies();
     }
 
+    public void totalReset() {
+        resetCurrencies();
+        runs.clear();
+        run = 1;
+    }
+
     private void resetCurrencies() {
         for (Main.Currency currency : Main.Currency.values()) {
             currencies.put(currency, 0);
