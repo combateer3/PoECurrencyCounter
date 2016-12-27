@@ -3,7 +3,9 @@ package zone;
 import driver.Main;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Zone implements Serializable {
 
@@ -12,16 +14,17 @@ public class Zone implements Serializable {
 
     private HashMap<Main.Currency, Integer> currencies;
 
+    private List<HashMap<Main.Currency, Integer>> runs;
+
     public Zone(String name) {
         this.name = name;
         //default first run
         this.run = 1;
         currencies = new HashMap<>();
+        runs = new ArrayList<>();
 
         //default values of zero for new zone
-        for (Main.Currency currency : Main.Currency.values()) {
-            currencies.put(currency, 0);
-        }
+        resetCurrencies();
     }
 
     public void addCurrency(Main.Currency currencyType, int amount) {
@@ -39,7 +42,15 @@ public class Zone implements Serializable {
     }
 
     public void createNewRun() {
+        runs.add(new HashMap<>(currencies));
         run += 1;
+        resetCurrencies();
+    }
+
+    private void resetCurrencies() {
+        for (Main.Currency currency : Main.Currency.values()) {
+            currencies.put(currency, 0);
+        }
     }
 
     public int getRun() {

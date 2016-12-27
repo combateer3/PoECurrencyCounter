@@ -10,13 +10,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import zone.Zone;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainController {
 
-    private List<Zone> zones;
-    private List<String> zoneNames;
+    private static final String FILE = "data/zones.dat";
+
+    private static List<Zone> zones;
+    private static List<String> zoneNames;
 
     @FXML
     private ChoiceBox zonesBox;
@@ -61,12 +64,23 @@ public class MainController {
 
     @FXML
     private void initialize() {
-        zones = new ArrayList<>();
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE));
+
+            zones = (List<Zone>) ois.readObject();
+        } catch (EOFException e) {
+            zones = new ArrayList<>();
+            zones.add(new Zone("Dried Lake"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         zoneNames = new ArrayList<>();
 
-        zones.add(new Zone("Dried Lake"));
-
         refreshZonesBox();
+        updateLabels();
 
         zonesBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -77,6 +91,17 @@ public class MainController {
                 }
             }
         });
+
+        //TODO stats window
+    }
+
+    public static void save() {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE));
+            oos.writeObject(zones);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void refreshZonesBox() {
@@ -123,7 +148,7 @@ public class MainController {
     private void createNewRun() {
         currentZone.createNewRun();
         runLabel.setText("Run " + currentZone.getRun());
-        //TODO reset labels and create new "run" (object?)
+        updateLabels();
     }
 
     @FXML
