@@ -4,10 +4,12 @@ import driver.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -63,6 +65,45 @@ public class MainController {
 
     @FXML
     private Label silverLabel;
+
+    @FXML
+    private Label chanceLabel;
+
+    @FXML
+    private Label blessedLabel;
+
+    @FXML
+    private Label scouringLabel;
+
+    @FXML
+    private Label regretLabel;
+
+    @FXML
+    private Label chromaticLabel;
+
+    @FXML
+    private Label fusingLabel;
+
+    @FXML
+    private Label gemcutterLabel;
+
+    @FXML
+    private Label jewellerLabel;
+
+    @FXML
+    private Label chiselLabel;
+
+    @FXML
+    private Label vaalLabel;
+
+    @FXML
+    private Label baubleLabel;
+
+    @FXML
+    private Label scrapLabel;
+
+    @FXML
+    private Label whetstoneLabel;
 
     private static Zone currentZone;
 
@@ -129,6 +170,19 @@ public class MainController {
         divineLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.DIVINE)));
         mirrorLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.MIRROR)));
         silverLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.SILVER)));
+        chanceLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.CHANCE)));
+        blessedLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.BLESSED)));
+        scouringLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.SCOURING)));
+        regretLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.REGRET)));
+        chromaticLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.CHROMATIC)));
+        fusingLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.FUSING)));
+        gemcutterLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.GEMCUTTER)));
+        jewellerLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.JEWELLER)));
+        chiselLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.CHISEL)));
+        vaalLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.VAAL)));
+        baubleLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.BAUBLE)));
+        scrapLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.SCRAP)));
+        whetstoneLabel.setText(String.valueOf(currentZone.getCurrency(Main.Currency.WHETSTONE)));
 
         runLabel.setText("Run " + currentZone.getRun());
     }
@@ -307,6 +361,162 @@ public class MainController {
     @FXML
     private void removeSilver() {
         currentZone.addCurrency(Main.Currency.SILVER, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addChance() {
+        currentZone.addCurrency(Main.Currency.CHANCE, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeChance() {
+        currentZone.addCurrency(Main.Currency.CHANCE, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addBlessed() {
+        currentZone.addCurrency(Main.Currency.BLESSED, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeBlessed() {
+        currentZone.addCurrency(Main.Currency.BLESSED, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addScouring() {
+        currentZone.addCurrency(Main.Currency.SCOURING, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeScouring() {
+        currentZone.addCurrency(Main.Currency.SCOURING, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addRegret() {
+        currentZone.addCurrency(Main.Currency.REGRET, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeRegret() {
+        currentZone.addCurrency(Main.Currency.REGRET, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addChromatic() {
+        currentZone.addCurrency(Main.Currency.CHROMATIC, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeChromatic() {
+        currentZone.addCurrency(Main.Currency.CHROMATIC, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addFusing() {
+        currentZone.addCurrency(Main.Currency.FUSING, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeFusing() {
+        currentZone.addCurrency(Main.Currency.FUSING, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addGemcutter() {
+        currentZone.addCurrency(Main.Currency.GEMCUTTER, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeGemcutter() {
+        currentZone.addCurrency(Main.Currency.GEMCUTTER, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addJeweller() {
+        currentZone.addCurrency(Main.Currency.JEWELLER, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeJeweller() {
+        currentZone.addCurrency(Main.Currency.JEWELLER, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addChisel() {
+        currentZone.addCurrency(Main.Currency.CHISEL, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeChisel() {
+        currentZone.addCurrency(Main.Currency.CHISEL, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addVaal() {
+        currentZone.addCurrency(Main.Currency.VAAL, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeVaal() {
+        currentZone.addCurrency(Main.Currency.VAAL, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addBauble() {
+        currentZone.addCurrency(Main.Currency.BAUBLE, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeBauble() {
+        currentZone.addCurrency(Main.Currency.BAUBLE, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addScrap() {
+        currentZone.addCurrency(Main.Currency.SCRAP, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeScrap() {
+        currentZone.addCurrency(Main.Currency.SCRAP, -1);
+        updateLabels();
+    }
+
+    @FXML
+    private void addWhetstone() {
+        currentZone.addCurrency(Main.Currency.WHETSTONE, 1);
+        updateLabels();
+    }
+
+    @FXML
+    private void removeWhetstone() {
+        currentZone.addCurrency(Main.Currency.WHETSTONE, -1);
         updateLabels();
     }
 

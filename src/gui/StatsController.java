@@ -74,6 +74,84 @@ public class StatsController {
     @FXML
     private Label silverTotal;
 
+    @FXML
+    private Label chanceAverage;
+
+    @FXML
+    private Label chanceTotal;
+
+    @FXML
+    private Label scouringAverage;
+
+    @FXML
+    private Label scouringTotal;
+
+    @FXML
+    private Label blessedAverage;
+
+    @FXML
+    private Label blessedTotal;
+
+    @FXML
+    private Label regretAverage;
+
+    @FXML
+    private Label regretTotal;
+
+    @FXML
+    private Label chromaticAverage;
+
+    @FXML
+    private Label chromaticTotal;
+
+    @FXML
+    private Label gemcutterAverage;
+
+    @FXML
+    private Label gemcutterTotal;
+
+    @FXML
+    private Label fusingAverage;
+
+    @FXML
+    private Label fusingTotal;
+
+    @FXML
+    private Label jewellerAverage;
+
+    @FXML
+    private Label jewellerTotal;
+
+    @FXML
+    private Label chiselAverage;
+
+    @FXML
+    private Label chiselTotal;
+
+    @FXML
+    private Label vaalAverage;
+
+    @FXML
+    private Label vaalTotal;
+
+    @FXML
+    private Label baubleAverage;
+
+    @FXML
+    private Label baubleTotal;
+
+    @FXML
+    private Label scrapAverage;
+
+    @FXML
+    private Label scrapTotal;
+
+    @FXML
+    private Label whetstoneAverage;
+
+    @FXML
+    private Label whetstoneTotal;
+
     private static Zone currentZone;
 
     private List<HashMap<Main.Currency, Integer>> runs;
@@ -96,6 +174,19 @@ public class StatsController {
         appendLabelText(divineAverage, average(Main.Currency.DIVINE));
         appendLabelText(mirrorAverage, average(Main.Currency.MIRROR));
         appendLabelText(silverAverage, average(Main.Currency.SILVER));
+        appendLabelText(chanceAverage, average(Main.Currency.CHANCE));
+        appendLabelText(scouringAverage, average(Main.Currency.SCOURING));
+        appendLabelText(blessedAverage, average(Main.Currency.BLESSED));
+        appendLabelText(regretAverage, average(Main.Currency.REGRET));
+        appendLabelText(chromaticAverage, average(Main.Currency.CHROMATIC));
+        appendLabelText(fusingAverage, average(Main.Currency.FUSING));
+        appendLabelText(gemcutterAverage, average(Main.Currency.GEMCUTTER));
+        appendLabelText(jewellerAverage, average(Main.Currency.JEWELLER));
+        appendLabelText(chiselAverage, average(Main.Currency.CHISEL));
+        appendLabelText(vaalAverage, average(Main.Currency.VAAL));
+        appendLabelText(baubleAverage, average(Main.Currency.BAUBLE));
+        appendLabelText(scrapAverage, average(Main.Currency.SCRAP));
+        appendLabelText(whetstoneAverage, average(Main.Currency.WHETSTONE));
 
         //totals
         appendLabelText(transmuteTotal, total(Main.Currency.TRANSMUTE));
@@ -108,6 +199,19 @@ public class StatsController {
         appendLabelText(divineTotal, total(Main.Currency.DIVINE));
         appendLabelText(mirrorTotal, total(Main.Currency.MIRROR));
         appendLabelText(silverTotal, total(Main.Currency.SILVER));
+        appendLabelText(chanceTotal, total(Main.Currency.CHANCE));
+        appendLabelText(scouringTotal, total(Main.Currency.SCOURING));
+        appendLabelText(blessedTotal, total(Main.Currency.BLESSED));
+        appendLabelText(regalTotal, total(Main.Currency.REGRET));
+        appendLabelText(chromaticTotal, total(Main.Currency.CHROMATIC));
+        appendLabelText(fusingTotal, total(Main.Currency.FUSING));
+        appendLabelText(gemcutterTotal, total(Main.Currency.GEMCUTTER));
+        appendLabelText(jewellerTotal, total(Main.Currency.JEWELLER));
+        appendLabelText(chiselTotal, total(Main.Currency.CHISEL));
+        appendLabelText(vaalTotal, total(Main.Currency.VAAL));
+        appendLabelText(baubleTotal, total(Main.Currency.BAUBLE));
+        appendLabelText(scrapTotal, total(Main.Currency.SCRAP));
+        appendLabelText(whetstoneTotal, total(Main.Currency.WHETSTONE));
     }
 
     private double average(Main.Currency currencyType) {

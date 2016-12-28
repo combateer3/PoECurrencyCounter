@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
    <children>
-      <GridPane layoutX="172.0" layoutY="174.0" prefHeight="492.0" prefWidth="535.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane gridLinesVisible="true" layoutX="172.0" layoutY="174.0" prefHeight="492.0" prefWidth="535.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -19,6 +19,9 @@
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
@@ -69,7 +72,7 @@
                   <Button mnemonicParsing="false" onAction="#removeAlch" text="-" />
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="331.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4">
+            <VBox alignment="CENTER" layoutX="331.0" layoutY="10.0" prefHeight="156.0" prefWidth="292.0" spacing="10.0" GridPane.columnIndex="4">
                <children>
                   <Button mnemonicParsing="false" onAction="#addRegal" text="+" />
                   <Label text="Regal">
@@ -141,9 +144,165 @@
                   <Button mnemonicParsing="false" onAction="#removeSilver" text="-" />
                </children>
             </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="133.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addChance" text="+" />
+                  <Label text="Chance">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="chanceLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeChance" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="256.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addBlessed" text="+" />
+                  <Label text="Blessed">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="blessedLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeBlessed" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addScouring" text="+" />
+                  <Label text="Scouring">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scouringLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeScouring" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addRegret" text="+" />
+                  <Label text="Regret">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="regretLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeRegret" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="331.0" layoutY="256.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addChromatic" text="+" />
+                  <Label text="Chromatic">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="chromaticLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeChromatic" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="133.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addFusing" text="+" />
+                  <Label text="Fusing">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fusingLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeFusing" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addGemcutter" text="+" />
+                  <Label text="Gemcutter">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="gemcutterLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeGemcutter" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addJeweller" text="+" />
+                  <Label text="Jeweller">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="jewellerLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeJeweller" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addChisel" text="+" />
+                  <Label text="Chisel">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="chiselLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeChisel" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="331.0" layoutY="379.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addVaal" text="+" />
+                  <Label text="Vaal">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vaalLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeVaal" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="152.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addBauble" text="+" />
+                  <Label text="Bauble">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="baubleLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeBauble" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addWhetstone" text="+" />
+                  <Label text="Whetstone">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="whetstoneLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeWhetstone" text="-" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addScrap" text="+" />
+                  <Label text="Scrap">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scrapLabel" text="0" />
+                  <Button mnemonicParsing="false" onAction="#removeScrap" text="-" />
+               </children>
+            </VBox>
          </children>
       </GridPane>
-      <VBox alignment="CENTER" layoutX="41.0" layoutY="103.0" prefHeight="492.0" prefWidth="146.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="41.0" layoutY="103.0" prefHeight="710.0" prefWidth="171.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button mnemonicParsing="false" onAction="#deleteZone" text="Delete Zone" />
             <ChoiceBox fx:id="zonesBox" prefHeight="25.0" prefWidth="130.0">
@@ -154,7 +313,7 @@
             <TextField fx:id="zoneField" prefHeight="25.0" prefWidth="124.0" promptText="Zone Name" />
             <Button mnemonicParsing="false" onAction="#createNewZone" text="New Zone">
                <VBox.margin>
-                  <Insets bottom="90.0" />
+                  <Insets bottom="130.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#clearAllData" text="Clear All Data">

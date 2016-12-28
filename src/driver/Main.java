@@ -11,7 +11,10 @@ public class Main extends Application {
 
     public enum Currency {
         TRANSMUTE, AUGMENT, ALT, ALCH, REGAL,
-        CHAOS, EXALT, DIVINE, MIRROR, SILVER
+        CHAOS, EXALT, DIVINE, MIRROR, SILVER,
+        CHANCE, BLESSED, SCOURING, REGRET, CHROMATIC,
+        FUSING, GEMCUTTER, JEWELLER, CHISEL, VAAL,
+        BAUBLE, SCRAP, WHETSTONE
     }
 
     @Override
